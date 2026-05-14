@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+  
+    int chosenNumber = 7;
+    
+    user's input
+    int userGuess = 0;
+    
+     numbers entered by the user
+    std::vector<int> guessHistory;
+
+    std::cout << "--- Guess the Secret Number ---" << std::endl;
+
+     long as the guess is not equal
+    while (userGuess != chosenNumber) {
+        
+      
+        std::cout << "Enter your guess: ";
+        std::cin >> userGuess;
+
+        the list so every attempt is recorded
+        guessHistory.push_back(userGuess);
+
+        compare the guess
+        if (userGuess > chosenNumber) {
+            std::cout << "Too high" << std::endl;
+        } 
+        else if (userGuess < chosenNumber) {
+            std::cout << "Too low" << std::endl;
+        } 
+        else {
+            std::cout << "Correct!" << std::endl;
+        }
+    }
+
+    
+    std::cout << "\nGame Over! Your guess history: ";
+    for (int guess : guessHistory) {
+        std::cout << guess << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
